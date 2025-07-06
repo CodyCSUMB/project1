@@ -41,6 +41,11 @@ public abstract class Monster {
         this.setPhrase(this);
     }
 
+    /**
+     * Calculates and attacks parameter monster from the current object
+     * @param monster
+     * @return damageTaken
+     */
     public double attack(Monster monster) {
         if (this.isFainted()) {
             System.out.printf("%s isn't conscious.. it can't attack.\n", this.name);
@@ -63,6 +68,11 @@ public abstract class Monster {
         return damageTaken;
     }
 
+    /**
+     * Calculates the damage taken from the current object
+     * @param attackValue
+     * @return attackPoints
+     */
     public double takeDamage(double attackValue) {
         double defense = calculateDefensePoints(this);
         double attackPoints = attackValue - defense;
@@ -90,6 +100,11 @@ public abstract class Monster {
         return attackPoints;
     }
 
+    /**
+     * Calculates defense points by rolling a dice provided by the utilities package
+     * @param monster
+     * @return defenseValue
+     */
     public double calculateDefensePoints(Monster monster) {
         int defenseValue = Dice.roll(monster.defenseMin, monster.defenseMax);
 
