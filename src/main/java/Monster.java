@@ -29,7 +29,7 @@ public abstract class Monster {
     private String phrase = "";
     private int attackMin = 1;
     private int attackPoints = 10;
-    private int defensePoints = 10;
+    protected int defensePoints = 10;
     private boolean fainted = false;
     private int attackMax = 10;
     private Double healthPoints = MAX_HP;
@@ -226,7 +226,7 @@ public abstract class Monster {
     }
 
     public String getPhrase() {
-        return phrase;
+        return phrase + phrase;
     }
 
     public void setPhrase(String phrase) {
