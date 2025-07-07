@@ -13,6 +13,11 @@ public class FireLizard extends Monster {
 
     FireLizard(String value) {
         super(value, ElementalType.FIRE);
+        this.setDefensePoints(DEFENSE_MAX);
+        this.setAttackPoints(ATTACK_MAX);
+        this.setAttackMax(ATTACK_MAX);
+        this.setDefenseMin(DEFENSE_MIN);
+        this.setAttackMin(ATTACK_MIN);
     }
 
     @Override
@@ -28,6 +33,6 @@ public class FireLizard extends Monster {
 
     @Override
     public void setDefensePoints() {
-        this.setAttackPoints(Dice.roll(DEFENSE_MIN, DEFENSE_MAX));
+        this.setDefensePoints(Dice.roll(DEFENSE_MIN, DEFENSE_MAX));
     }
 }
