@@ -181,6 +181,22 @@ public abstract class Monster {
         return Objects.hash(name, defenseMax, elements, phrase, attackMin, attackPoints, defensePoints, fainted, attackMax, healthPoints, defenseMin);
     }
 
+    @Override
+    public String toString() {
+        if (!isFainted()) {
+            StringBuilder info = new StringBuilder(String.format("%s has %f/%f hp\nElemental type:", this.name, this.healthPoints, MAX_HP));
+            for (ElementalType elementalType : this.elements) {
+                info.append(elementalType.toString()).append(", ");
+            }
+            return info.toString();
+        }
+        StringBuilder info = new StringBuilder(String.format("%s has fainted.\nElemental type: ", this.name));
+        for (ElementalType elementalType : this.elements) {
+            info.append(elementalType.toString()).append(", ");
+        }
+        return info.toString();
+    }
+
     // getters/setters
 
     public int setType(ElementalType elementalType) {
@@ -196,7 +212,7 @@ public abstract class Monster {
             return -1;
         }
 
-        System.out.printf("%s now has %s", this.name, elementalType);
+        System.out.printf("%s now has %s\n", this.name, elementalType);
         this.elements.add(elementalType);
         return 0;
     }
@@ -226,7 +242,7 @@ public abstract class Monster {
     }
 
     public String getPhrase() {
-        return phrase + phrase;
+        return phrase + " " + phrase;
     }
 
     public void setPhrase(String phrase) {
@@ -235,7 +251,7 @@ public abstract class Monster {
 
     private void setPhrase(Monster monster) {
         switch (monster.name) {
-            case "Electric Rate":
+            case "Electric Rat":
                 this.setPhrase("'Lectric!");
                 break;
             case "Fire Lizard":
