@@ -13,6 +13,11 @@ public class ElectricRat extends Monster{
 
     ElectricRat(String value) {
         super(value, ElementalType.ELECTRIC);
+        this.setDefensePoints(DEFENSE_MAX);
+        this.setAttackPoints(ATTACK_MAX);
+        this.setAttackMax(ATTACK_MAX);
+        this.setDefenseMin(DEFENSE_MIN);
+        this.setAttackMin(ATTACK_MIN);
     }
 
     @Override
