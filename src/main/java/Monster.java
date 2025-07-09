@@ -3,14 +3,13 @@ import java.util.List;
 import java.util.Objects;
 import utilities.Dice;
 
+/*
+ * @author Cody Hopkins
+ * Date: 07/06/2025
+ * Explanation: base monster class
+ */
 public abstract class Monster {
     private static final double MAX_HP = 20.0;
-
-    /**
-     * @author Drew A. Clinkenbeard
-     * @since 2.0.1
-     * The beginning of the Monster class
-     */
 
     /**
      * THis is an inner class that represents the types that may be used to
@@ -43,7 +42,7 @@ public abstract class Monster {
 
     /**
      * Calculates and attacks parameter monster from the current object
-     * @param monster
+     * @param monster The monster that is being attacked
      * @return damageTaken
      */
     public double attack(Monster monster) {
@@ -70,7 +69,7 @@ public abstract class Monster {
 
     /**
      * Calculates the damage taken from the current object
-     * @param attackValue
+     * @param attackValue damage done to current monster
      * @return attackPoints
      */
     public double takeDamage(double attackValue) {
@@ -101,8 +100,8 @@ public abstract class Monster {
     }
 
     /**
-     * Calculates defense points by rolling a dice provided by the utilities package
-     * @param monster
+     * Calculates defense points by rolling a die provided by the utilities package
+     * @param monster Monster that is given defense points
      * @return defenseValue
      */
     public double calculateDefensePoints(Monster monster) {
@@ -120,6 +119,12 @@ public abstract class Monster {
         return defenseValue;
     }
 
+    /**
+     * Calculates attack points by rolling a die for the monster
+     * @param monster The monster that is being given attack points
+     * @param enemyType Set a attack modifier based on given enemy type
+     * @return modifier
+     */
     public double calculateAttackPoints(Monster monster, List<ElementalType> enemyType) {
         int attackValue = Dice.roll(monster.attackMin, monster.attackMax);
 
@@ -138,6 +143,11 @@ public abstract class Monster {
         return modifier * attackValue;
     }
 
+    /**
+     * Determines a modifier depending on the monster's elemental type
+     * @param defending base modifier on given elemental type
+     * @return modifier
+     */
     public double attackModifier(ElementalType defending) {
         for (ElementalType elementalType : this.elements) {
             return switch (elementalType) {
@@ -199,6 +209,11 @@ public abstract class Monster {
 
     // getters/setters
 
+    /**
+     * Sets the elemental type for the current object
+     * @param elementalType Type to determine object's elemental type
+     * @return int
+     */
     public int setType(ElementalType elementalType) {
         for  (ElementalType element : this.elements) {
             if (element.equals(elementalType)) {

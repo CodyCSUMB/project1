@@ -3,7 +3,7 @@ import utilities.Dice;
 /*
  * @author Cody Hopkins
  * Date: 07/06/2025
- * Explanation:
+ * Explanation: weird turtle monster
  */
 public class WeirdTurtle extends Monster{
     private final int DEFENSE_MIN = 3;

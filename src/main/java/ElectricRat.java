@@ -3,7 +3,7 @@ import utilities.Dice;
 /*
  * @author Cody Hopkins
  * Date: 07/06/2025
- * Explanation:
+ * Explanation: Electric rat monster
  */
 public class ElectricRat extends Monster{
     private final int DEFENSE_MIN = 5;
