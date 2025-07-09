@@ -57,7 +57,7 @@ public abstract class Monster {
 
         double attackPoints = this.calculateAttackPoints(this, monster.getElements());
 
-        System.out.printf("%s is attacking with %f\n", this.name, attackPoints);
+        System.out.printf("%s is attacking with %f attack points!\n", this.name, attackPoints);
 
         double damageTaken = monster.takeDamage(attackPoints);
 
