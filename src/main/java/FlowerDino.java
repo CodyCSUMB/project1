@@ -3,7 +3,7 @@ import utilities.Dice;
 /*
  * @author Cody Hopkins
  * Date: 07/06/2025
- * Explanation:
+ * Explanation: flower dino monster
  */
 public class FlowerDino extends Monster {
     private final int DEFENSE_MIN = 4;
